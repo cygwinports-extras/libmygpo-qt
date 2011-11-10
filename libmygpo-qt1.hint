@@ -1,0 +1,5 @@
+category: KDE
+requires: libgcc1 libqjson0 libQtCore4 libQtNetwork4 libstdc++6
+external-source: libmygpo-qt
+sdesc: "Qt interface to gpodder.net (runtime)"
+ldesc: "libmygpo-qt is a Qt Library that wraps the gpodder.net Web API."

@@ -1,0 +1,26 @@
+--- origsrc/libmygpo-qt.1.0.5/src/CMakeLists.txt	2011-11-08 17:11:00.000000000 -0600
++++ src/libmygpo-qt.1.0.5/src/CMakeLists.txt	2011-11-10 09:33:45.586102700 -0600
+@@ -76,8 +76,11 @@ QT4_WRAP_CPP(LIBMYGPO_QT_MOC_SRC ${LIBMY
+ 
+ add_library( mygpo-qt SHARED ${LIBMYGPO_QT_SRC} ${LIBMYGPO_QT_MOC_SRC} )
+ 
+-target_link_libraries( mygpo-qt ${QJSON_LIBRARIES} ${QT_QTCORE_LIBRARY} ${QT_QTNETWORK_LIBRARY}  )
++target_link_libraries( mygpo-qt ${QJSON_LDFLAGS} ${QT_QTCORE_LIBRARY} ${QT_QTNETWORK_LIBRARY}  )
+ set_target_properties( mygpo-qt PROPERTIES VERSION ${MYGPO_QT_VERSION} SOVERSION ${MYGPO_QT_SONAME} DEFINE_SYMBOL MYGPO_MAKEDLL)
+-install( TARGETS mygpo-qt EXPORT mygpo-qtExport DESTINATION lib${LIB_SUFFIX} )
++install( TARGETS mygpo-qt EXPORT mygpo-qtExport
++         LIBRARY DESTINATION lib${LIB_SUFFIX}
++         RUNTIME DESTINATION bin
++         ARCHIVE DESTINATION lib${LIB_SUFFIX} )
+ 
+ install( FILES ${LIBMYGPO_QT_INSTALL_H} DESTINATION  include/mygpo-qt COMPONENT Devel )
+--- origsrc/libmygpo-qt.1.0.5/tests/CMakeLists.txt	2011-11-08 17:11:00.000000000 -0600
++++ src/libmygpo-qt.1.0.5/tests/CMakeLists.txt	2011-11-10 09:36:44.487214600 -0600
+@@ -9,6 +9,7 @@ include_directories( ${QT_INCLUDES} ${QJ
+ 
+ # UrlBuilder library
+ add_library( UrlBuilder ${TESTOBJECTS_SRCDIR}/UrlBuilder.cpp )
++target_link_libraries(UrlBuilder ${QT_QTCORE_LIBRARY})
+ 
+ set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
+ 
