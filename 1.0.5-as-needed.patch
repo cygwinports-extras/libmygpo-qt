@@ -16,11 +16,7 @@
  install( FILES ${LIBMYGPO_QT_INSTALL_H} DESTINATION  include/mygpo-qt COMPONENT Devel )
 --- origsrc/libmygpo-qt.1.0.5/tests/CMakeLists.txt	2011-11-08 17:11:00.000000000 -0600
 +++ src/libmygpo-qt.1.0.5/tests/CMakeLists.txt	2011-11-10 09:36:44.487214600 -0600
-@@ -9,6 +9,7 @@ include_directories( ${QT_INCLUDES} ${QJ
- 
- # UrlBuilder library
+@@ -9,2 +9,3 @@ include_directories( ${QT_INCLUDES} ${QJ
  add_library( UrlBuilder ${TESTOBJECTS_SRCDIR}/UrlBuilder.cpp )
 +target_link_libraries(UrlBuilder ${QT_QTCORE_LIBRARY})
- 
- set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
- 
+ # JSONCreator library

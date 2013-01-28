@@ -1,3 +1,0 @@
-category: KDE
-sdesc: "Qt interface to gpodder.net (sources)"
-ldesc: "libmygpo-qt is a Qt Library that wraps the gpodder.net Web API."
