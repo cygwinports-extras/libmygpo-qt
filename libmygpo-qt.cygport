@@ -1,17 +1,16 @@
 inherit qt4-cmake
 
 NAME="libmygpo-qt"
-VERSION=1.0.6
+VERSION=1.0.7
 RELEASE=1
-CATEGORY="Net"
+CATEGORY="Libs"
 SUMMARY="Qt interface to gpodder.net"
 DESCRIPTION="libmygpo-qt is a Qt Library that wraps the gpodder.net Web API."
 HOMEPAGE="http://wiki.gpodder.org/wiki/Libmygpo-qt"
-SRC_URI="http://stefan.derkits.at/files/${PN}/${PN}.${PV}.tar.gz"
-SRC_DIR="${PN}.${PV}"
-
+SRC_URI="http://stefan.derkits.at/files/libmygpo-qt/${NAME}.${VERSION}.tar.gz"
+SRC_DIR="${NAME}.${VERSION}"
 PATCH_URI="1.0.5-as-needed.patch"
 
-PKG_NAMES="${PN}1 ${PN}-devel"
+PKG_NAMES="${NAME}1 ${NAME}-devel"
 libmygpo_qt1_CONTENTS="usr/bin/cygmygpo-qt-1.dll usr/share/doc/"
 libmygpo_qt_devel_CONTENTS="usr/include/ usr/lib/"
